@@ -1,0 +1,2440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Smart Student</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="sidebar-logo-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <h2>
+                    Smart Student
+                </h2>
+
+                <span>
+                    Student Portal
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="#"
+                class="nav-item active"
+                data-section="dashboard"
+            >
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+                data-section="attendance"
+            >
+                <span>📊</span>
+                <span>Attendance</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+                data-section="assignments"
+            >
+                <span>📝</span>
+                <span>Assignments</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+                data-section="notes"
+            >
+                <span>📚</span>
+                <span>Notes</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+                data-section="timetable"
+            >
+                <span>📅</span>
+                <span>Study Timetable</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+                data-section="aiquiz"
+            >
+                <span>🤖</span>
+                <span>AI Quiz</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+                data-section="performance"
+            >
+                <span>📈</span>
+                <span>Performance</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="#"
+                class="nav-item"
+                data-section="profile"
+            >
+                <span>👤</span>
+                <span>Profile</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+                data-section="settings"
+            >
+                <span>⚙️</span>
+                <span>Settings</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+                data-section="notifications"
+            >
+                <span>🔔</span>
+                <span>Notifications</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item logout-item"
+                id="logoutBtn"
+            >
+                <span>🚪</span>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOP HEADER -->
+
+        <header class="dashboard-header">
+
+
+            <div class="header-left">
+
+                <h1 id="pageTitle">
+
+                    Good Morning,
+
+                    <span id="studentName">
+                        Student
+                    </span>
+
+                   ! 👋
+
+                </h1>
+
+
+                <p id="pageSubtitle">
+                    Here's what's happening with your studies today.
+                </p>
+
+            </div>
+
+
+
+            <div class="header-right">
+
+
+                <button
+                    class="notification-btn"
+                    data-section="notifications"
+                    id="notificationButton"
+                >
+
+                    🔔
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+
+                <div class="profile">
+
+
+                    <div
+                        class="profile-avatar"
+                        id="profileAvatar"
+                    >
+                        S
+                    </div>
+
+
+                    <div class="profile-info">
+
+                        <strong id="profileName">
+                            Student
+                        </strong>
+
+                        <span id="profileCourse">
+                            AI & Data Science
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================
+             DASHBOARD SECTION
+        ====================================== -->
+
+        <section
+            class="app-section active-section"
+            id="dashboardSection"
+        >
+
+
+            <div class="welcome-banner">
+
+
+                <div>
+
+                    <p class="banner-small">
+                        KEEP LEARNING • KEEP GROWING
+                    </p>
+
+
+                    <h2>
+                        Ready to achieve your goals? 🚀
+                    </h2>
+
+
+                    <p>
+                        You have 3 tasks waiting for you today.
+                        Let's make it a productive day!
+                    </p>
+
+
+                    <button
+                        class="banner-btn"
+                        data-section="assignments"
+                    >
+                        View My Tasks →
+                    </button>
+
+                </div>
+
+
+                <div class="banner-illustration">
+                    🎓
+                </div>
+
+            </div>
+
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon attendance-icon">
+                            📊
+                        </div>
+
+                        <span class="stat-label">
+                            Attendance
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="stat-value"
+                        id="dashboardAttendance"
+                    >
+                        87%
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress-fill attendance-progress"
+                            id="attendanceProgress"
+                        ></div>
+
+                    </div>
+
+
+                    <p class="stat-description">
+                        Overall attendance
+                    </p>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon assignment-icon">
+                            📝
+                        </div>
+
+                        <span class="stat-label">
+                            Assignments
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="stat-value"
+                        id="pendingCount"
+                    >
+                        3
+                    </div>
+
+
+                    <p class="stat-description">
+                        Pending assignments
+                    </p>
+
+
+                    <div
+                        class="stat-link"
+                        data-section="assignments"
+                    >
+                        View assignments →
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon study-icon">
+                            ⏱️
+                        </div>
+
+                        <span class="stat-label">
+                            Study Hours
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-value">
+                        18.5 <small>hrs</small>
+                    </div>
+
+
+                    <p class="stat-description">
+                        This week
+                    </p>
+
+
+                    <div class="stat-link">
+                        +12% from last week
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon performance-icon">
+                            📈
+                        </div>
+
+                        <span class="stat-label">
+                            Performance
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-value">
+                        82%
+                    </div>
+
+
+                    <p class="stat-description">
+                        Overall academic score
+                    </p>
+
+
+                    <div
+                        class="stat-link"
+                        data-section="performance"
+                    >
+                        View performance →
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DASHBOARD CARDS -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- TIMETABLE -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Today's Timetable
+                            </h3>
+
+                            <p>
+                                Your classes and study sessions
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="view-all"
+                            data-section="timetable"
+                        >
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div class="schedule-list">
+
+
+                        <div class="schedule-item current">
+
+                            <div class="schedule-time">
+                                09:00
+                                <span>10:00</span>
+                            </div>
+
+                            <div class="schedule-line"></div>
+
+                            <div class="schedule-content">
+
+                                <strong>
+                                    Machine Learning
+                                </strong>
+
+                                <span>
+                                    📍 Room 204 • Dr. Priya
+                                </span>
+
+                            </div>
+
+                            <span class="current-badge">
+                                NOW
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="schedule-item">
+
+                            <div class="schedule-time">
+                                10:15
+                                <span>11:15</span>
+                            </div>
+
+                            <div class="schedule-line"></div>
+
+                            <div class="schedule-content">
+
+                                <strong>
+                                    Deep Learning
+                                </strong>
+
+                                <span>
+                                    📍 Room 301 • Prof. Arun
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="schedule-item">
+
+                            <div class="schedule-time">
+                                11:30
+                                <span>12:30</span>
+                            </div>
+
+                            <div class="schedule-line"></div>
+
+                            <div class="schedule-content">
+
+                                <strong>
+                                    Database Management
+                                </strong>
+
+                                <span>
+                                    📍 Lab 2 • Dr. Karthik
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="schedule-item">
+
+                            <div class="schedule-time">
+                                02:00
+                                <span>03:00</span>
+                            </div>
+
+                            <div class="schedule-line"></div>
+
+                            <div class="schedule-content">
+
+                                <strong>
+                                    Cloud Computing
+                                </strong>
+
+                                <span>
+                                    📍 Room 105 • Prof. Meena
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ASSIGNMENTS -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Upcoming Assignments
+                            </h3>
+
+                            <p>
+                                Don't miss your deadlines
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="view-all"
+                            data-section="assignments"
+                        >
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div class="assignment-list">
+
+
+                        <div class="assignment-item">
+
+                            <div class="assignment-icon-box">
+                                🤖
+                            </div>
+
+
+                            <div class="assignment-info">
+
+                                <strong>
+                                    Neural Network Assignment
+                                </strong>
+
+                                <span>
+                                    Deep Learning
+                                </span>
+
+                            </div>
+
+
+                            <div class="deadline urgent">
+
+                                <span>
+                                    Due
+                                </span>
+
+                                Tomorrow
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="assignment-item">
+
+                            <div class="assignment-icon-box">
+                                🗄️
+                            </div>
+
+
+                            <div class="assignment-info">
+
+                                <strong>
+                                    SQL Query Practice
+                                </strong>
+
+                                <span>
+                                    Database Management
+                                </span>
+
+                            </div>
+
+
+                            <div class="deadline">
+
+                                <span>
+                                    Due
+                                </span>
+
+                                Sep 30
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="assignment-item">
+
+                            <div class="assignment-icon-box">
+                                ☁️
+                            </div>
+
+
+                            <div class="assignment-info">
+
+                                <strong>
+                                    Cloud Lab Report
+                                </strong>
+
+                                <span>
+                                    Cloud Computing
+                                </span>
+
+                            </div>
+
+
+                            <div class="deadline">
+
+                                <span>
+                                    Due
+                                </span>
+
+                                Oct 2
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- AI -->
+
+                <div class="dashboard-card ai-card">
+
+                    <div class="ai-content">
+
+                        <div class="ai-icon">
+                            🤖
+                        </div>
+
+
+                        <div>
+
+                            <span class="ai-label">
+                                SMART LEARNING
+                            </span>
+
+
+                            <h3>
+                                Test Your Knowledge
+                            </h3>
+
+
+                            <p>
+                                Generate a personalized quiz
+                                based on your subjects.
+                            </p>
+
+
+                            <button
+                                class="ai-btn"
+                                data-section="aiquiz"
+                            >
+                                Start AI Quiz →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PERFORMANCE -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Performance Overview
+                            </h3>
+
+                            <p>
+                                Your academic progress
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="view-all"
+                            data-section="performance"
+                        >
+                            Details
+                        </button>
+
+                    </div>
+
+
+                    <div class="performance-content">
+
+
+                        <div class="performance-circle">
+
+                            <div class="circle-inner">
+
+                                <strong>
+                                    82%
+                                </strong>
+
+                                <span>
+                                    Overall
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="performance-subjects">
+
+
+                            <div class="subject-row">
+
+                                <span>
+                                    Machine Learning
+                                </span>
+
+                                <strong>
+                                    91%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="mini-progress">
+
+                                <div style="width:91%"></div>
+
+                            </div>
+
+
+
+                            <div class="subject-row">
+
+                                <span>
+                                    Deep Learning
+                                </span>
+
+                                <strong>
+                                    85%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="mini-progress">
+
+                                <div style="width:85%"></div>
+
+                            </div>
+
+
+
+                            <div class="subject-row">
+
+                                <span>
+                                    Database
+                                </span>
+
+                                <strong>
+                                    78%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="mini-progress">
+
+                                <div style="width:78%"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ATTENDANCE
+        ====================================== -->
+
+        <section
+            class="app-section"
+            id="attendanceSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        📊 Attendance
+                    </h2>
+
+                    <p>
+                        Track your attendance subject by subject.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="attendance-summary">
+
+                <div class="big-attendance">
+
+                    <span>
+                        Overall Attendance
+                    </span>
+
+                    <strong id="overallAttendance">
+                        87%
+                    </strong>
+
+                    <div class="large-progress">
+
+                        <div
+                            id="overallAttendanceBar"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="attendance-warning">
+
+                    💡 Keep your attendance above 75% to stay safe.
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="table-header">
+
+                    <h3>
+                        Subject Attendance
+                    </h3>
+
+                </div>
+
+
+                <div class="attendance-table">
+
+
+                    <div class="table-row table-head">
+
+                        <span>
+                            Subject
+                        </span>
+
+                        <span>
+                            Present
+                        </span>
+
+                        <span>
+                            Total
+                        </span>
+
+                        <span>
+                            Percentage
+                        </span>
+
+                        <span>
+                            Action
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="table-row attendance-row">
+
+                        <span>
+                            Machine Learning
+                        </span>
+
+                        <span id="mlPresent">
+                            42
+                        </span>
+
+                        <span>
+                            45
+                        </span>
+
+                        <strong>
+                            93%
+                        </strong>
+
+                        <button
+                            class="small-btn present-btn"
+                            data-subject="ml"
+                        >
+                            + Present
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="table-row attendance-row">
+
+                        <span>
+                            Deep Learning
+                        </span>
+
+                        <span id="dlPresent">
+                            38
+                        </span>
+
+                        <span>
+                            43
+                        </span>
+
+                        <strong>
+                            88%
+                        </strong>
+
+                        <button
+                            class="small-btn present-btn"
+                            data-subject="dl"
+                        >
+                            + Present
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="table-row attendance-row">
+
+                        <span>
+                            Database Management
+                        </span>
+
+                        <span id="dbPresent">
+                            36
+                        </span>
+
+                        <span>
+                            43
+                        </span>
+
+                        <strong>
+                            84%
+                        </strong>
+
+                        <button
+                            class="small-btn present-btn"
+                            data-subject="db"
+                        >
+                            + Present
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="table-row attendance-row">
+
+                        <span>
+                            Cloud Computing
+                        </span>
+
+                        <span id="cloudPresent">
+                            31
+                        </span>
+
+                        <span>
+                            39
+                        </span>
+
+                        <strong>
+                            79%
+                        </strong>
+
+                        <button
+                            class="small-btn present-btn"
+                            data-subject="cloud"
+                        >
+                            + Present
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ASSIGNMENTS
+        ====================================== -->
+
+        <section
+            class="app-section"
+            id="assignmentsSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        📝 Assignments
+                    </h2>
+
+                    <p>
+                        Manage your academic deadlines.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-action"
+                    id="addAssignmentBtn"
+                >
+                    + Add Assignment
+                </button>
+
+            </div>
+
+
+            <div
+                class="form-card hidden-form"
+                id="assignmentForm"
+            >
+
+                <h3>
+                    Add New Assignment
+                </h3>
+
+
+                <div class="form-grid">
+
+                    <input
+                        type="text"
+                        id="assignmentTitle"
+                        placeholder="Assignment title"
+                    >
+
+
+                    <input
+                        type="text"
+                        id="assignmentSubject"
+                        placeholder="Subject"
+                    >
+
+
+                    <input
+                        type="date"
+                        id="assignmentDate"
+                    >
+
+
+                    <select id="assignmentPriority">
+
+                        <option value="Normal">
+                            Normal Priority
+                        </option>
+
+                        <option value="High">
+                            High Priority
+                        </option>
+
+                        <option value="Low">
+                            Low Priority
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="primary-action"
+                    id="saveAssignment"
+                >
+                    Save Assignment
+                </button>
+
+            </div>
+
+
+            <div
+                class="items-container"
+                id="assignmentList"
+            >
+
+                <div class="item-card">
+
+                    <div class="item-icon">
+                        🤖
+                    </div>
+
+
+                    <div class="item-main">
+
+                        <h3>
+                            Neural Network Assignment
+                        </h3>
+
+                        <p>
+                            Deep Learning
+                        </p>
+
+                    </div>
+
+
+                    <span class="priority high">
+                        High
+                    </span>
+
+
+                    <span class="item-date">
+                        Tomorrow
+                    </span>
+
+
+                    <button class="delete-btn">
+                        🗑️
+                    </button>
+
+                </div>
+
+
+
+                <div class="item-card">
+
+                    <div class="item-icon">
+                        🗄️
+                    </div>
+
+
+                    <div class="item-main">
+
+                        <h3>
+                            SQL Query Practice
+                        </h3>
+
+                        <p>
+                            Database Management
+                        </p>
+
+                    </div>
+
+
+                    <span class="priority normal">
+                        Normal
+                    </span>
+
+
+                    <span class="item-date">
+                        Sep 30
+                    </span>
+
+
+                    <button class="delete-btn">
+                        🗑️
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             NOTES
+        ====================================== -->
+
+        <section
+            class="app-section"
+            id="notesSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        📚 Notes
+                    </h2>
+
+                    <p>
+                        Keep all your study notes organized.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-action"
+                    id="addNoteBtn"
+                >
+                    + Create Note
+                </button>
+
+            </div>
+
+
+            <div
+                class="form-card hidden-form"
+                id="noteForm"
+            >
+
+                <h3>
+                    Create New Note
+                </h3>
+
+
+                <input
+                    type="text"
+                    id="noteTitle"
+                    placeholder="Note title"
+                >
+
+
+                <input
+                    type="text"
+                    id="noteSubject"
+                    placeholder="Subject"
+                >
+
+
+                <textarea
+                    id="noteContent"
+                    placeholder="Write your notes here..."
+                ></textarea>
+
+
+                <button
+                    class="primary-action"
+                    id="saveNote"
+                >
+                    Save Note
+                </button>
+
+            </div>
+
+
+            <div
+                class="notes-grid"
+                id="notesList"
+            >
+
+                <div class="note-large-card">
+
+                    <div class="note-large-icon">
+                        🧠
+                    </div>
+
+                    <h3>
+                        Neural Networks Basics
+                    </h3>
+
+                    <span>
+                        Deep Learning
+                    </span>
+
+                    <p>
+                        Introduction to neurons,
+                        activation functions and layers.
+                    </p>
+
+                    <button class="delete-btn">
+                        🗑️ Delete
+                    </button>
+
+                </div>
+
+
+
+                <div class="note-large-card">
+
+                    <div class="note-large-icon">
+                        🗄️
+                    </div>
+
+                    <h3>
+                        SQL Joins
+                    </h3>
+
+                    <span>
+                        Database Management
+                    </span>
+
+                    <p>
+                        INNER JOIN, LEFT JOIN,
+                        RIGHT JOIN and FULL JOIN.
+                    </p>
+
+                    <button class="delete-btn">
+                        🗑️ Delete
+                    </button>
+
+                </div>
+
+
+
+                <div class="note-large-card">
+
+                    <div class="note-large-icon">
+                        ☁️
+                    </div>
+
+                    <h3>
+                        Cloud Architecture
+                    </h3>
+
+                    <span>
+                        Cloud Computing
+                    </span>
+
+                    <p>
+                        Basic cloud services,
+                        virtualization and deployment.
+                    </p>
+
+                    <button class="delete-btn">
+                        🗑️ Delete
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             TIMETABLE
+        ====================================== -->
+
+        <section
+            class="app-section"
+            id="timetableSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        📅 Study Timetable
+                    </h2>
+
+                    <p>
+                        Plan your classes and study sessions.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-action"
+                    id="addScheduleBtn"
+                >
+                    + Add Session
+                </button>
+
+            </div>
+
+
+            <div
+                class="form-card hidden-form"
+                id="scheduleForm"
+            >
+
+                <h3>
+                    Add Study Session
+                </h3>
+
+
+                <div class="form-grid">
+
+                    <input
+                        type="text"
+                        id="scheduleSubject"
+                        placeholder="Subject"
+                    >
+
+
+                    <input
+                        type="text"
+                        id="scheduleTopic"
+                        placeholder="Topic"
+                    >
+
+
+                    <input
+                        type="time"
+                        id="scheduleTime"
+                    >
+
+
+                    <select id="scheduleDay">
+
+                        <option>
+                            Monday
+                        </option>
+
+                        <option>
+                            Tuesday
+                        </option>
+
+                        <option>
+                            Wednesday
+                        </option>
+
+                        <option>
+                            Thursday
+                        </option>
+
+                        <option>
+                            Friday
+                        </option>
+
+                        <option>
+                            Saturday
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="primary-action"
+                    id="saveSchedule"
+                >
+                    Add Session
+                </button>
+
+            </div>
+
+
+            <div class="week-grid">
+
+
+                <div class="day-card">
+
+                    <h3>
+                        Monday
+                    </h3>
+
+
+                    <div class="class-block">
+
+                        <strong>
+                            Machine Learning
+                        </strong>
+
+                        <span>
+                            09:00 AM
+                        </span>
+
+                    </div>
+
+
+                    <div class="class-block purple-block">
+
+                        <strong>
+                            Deep Learning
+                        </strong>
+
+                        <span>
+                            10:15 AM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="day-card">
+
+                    <h3>
+                        Tuesday
+                    </h3>
+
+
+                    <div class="class-block">
+
+                        <strong>
+                            DBMS
+                        </strong>
+
+                        <span>
+                            09:00 AM
+                        </span>
+
+                    </div>
+
+
+                    <div class="class-block green-block">
+
+                        <strong>
+                            Cloud Computing
+                        </strong>
+
+                        <span>
+                            02:00 PM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="day-card">
+
+                    <h3>
+                        Wednesday
+                    </h3>
+
+
+                    <div class="class-block">
+
+                        <strong>
+                            Data Science
+                        </strong>
+
+                        <span>
+                            10:00 AM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="day-card">
+
+                    <h3>
+                        Thursday
+                    </h3>
+
+
+                    <div class="class-block purple-block">
+
+                        <strong>
+                            AI Lab
+                        </strong>
+
+                        <span>
+                            11:00 AM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="day-card">
+
+                    <h3>
+                        Friday
+                    </h3>
+
+
+                    <div class="class-block green-block">
+
+                        <strong>
+                            Project Work
+                        </strong>
+
+                        <span>
+                            02:00 PM
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             AI QUIZ
+        ====================================== -->
+
+        <section
+            class="app-section"
+            id="aiquizSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        🤖 AI Quiz
+                    </h2>
+
+                    <p>
+                        Test your knowledge with smart quizzes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="quiz-setup dashboard-card">
+
+                <div class="quiz-icon">
+                    🧠
+                </div>
+
+
+                <h2>
+                    Generate Your Quiz
+                </h2>
+
+
+                <p>
+                    Select a subject and difficulty level.
+                </p>
+
+
+                <div class="quiz-options">
+
+
+                    <select id="quizSubject">
+
+                        <option value="">
+                            Select Subject
+                        </option>
+
+                        <option>
+                            Machine Learning
+                        </option>
+
+                        <option>
+                            Deep Learning
+                        </option>
+
+                        <option>
+                            Database Management
+                        </option>
+
+                        <option>
+                            Cloud Computing
+                        </option>
+
+                        <option>
+                            Python
+                        </option>
+
+                        <option>
+                            JavaScript
+                        </option>
+
+                    </select>
+
+
+
+                    <select id="quizDifficulty">
+
+                        <option value="">
+                            Select Difficulty
+                        </option>
+
+                        <option>
+                            Easy
+                        </option>
+
+                        <option>
+                            Medium
+                        </option>
+
+                        <option>
+                            Hard
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="primary-action quiz-generate-btn"
+                    id="generateQuiz"
+                >
+                    🤖 Generate Quiz
+                </button>
+
+            </div>
+
+
+            <div
+                class="quiz-area hidden-form"
+                id="quizArea"
+            >
+
+                <div class="quiz-header">
+
+                    <span id="quizNumber">
+                        Question 1
+                    </span>
+
+                    <span id="quizScore">
+                        Score: 0
+                    </span>
+
+                </div>
+
+
+                <h2 id="quizQuestion">
+                    Question will appear here.
+                </h2>
+
+
+                <div id="quizOptions"></div>
+
+
+                <button
+                    class="primary-action"
+                    id="nextQuestion"
+                >
+                    Next Question →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             PERFORMANCE
+        ====================================== -->
+
+        <section
+            class="app-section"
+            id="performanceSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        📈 Performance
+                    </h2>
+
+                    <p>
+                        Track your academic progress.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="performance-grid">
+
+
+                <div class="performance-main dashboard-card">
+
+                    <h3>
+                        Overall Performance
+                    </h3>
+
+
+                    <div class="large-circle">
+
+                        <div>
+
+                            <strong>
+                                82%
+                            </strong>
+
+                            <span>
+                                Overall Score
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <p>
+                        Keep working consistently to improve
+                        your academic performance.
+                    </p>
+
+                </div>
+
+
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        Subject Performance
+                    </h3>
+
+
+                    <div class="subject-performance">
+
+
+                        <div>
+
+                            <span>
+                                Machine Learning
+                            </span>
+
+                            <strong>
+                                91%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="performance-bar">
+
+                            <span style="width:91%"></span>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+                                Deep Learning
+                            </span>
+
+                            <strong>
+                                85%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="performance-bar">
+
+                            <span style="width:85%"></span>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+                                Database
+                            </span>
+
+                            <strong>
+                                78%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="performance-bar">
+
+                            <span style="width:78%"></span>
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+                                Cloud Computing
+                            </span>
+
+                            <strong>
+                                74%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="performance-bar">
+
+                            <span style="width:74%"></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             PROFILE
+        ====================================== -->
+
+        <section
+            class="app-section"
+            id="profileSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        👤 Profile
+                    </h2>
+
+                    <p>
+                        Manage your student information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-card dashboard-card">
+
+
+                <div
+                    class="profile-large-avatar"
+                    id="largeProfileAvatar"
+                >
+                    S
+                </div>
+
+
+                <div class="profile-details">
+
+                    <h2 id="profileFullName">
+                        Student
+                    </h2>
+
+
+                    <p id="profileEmail">
+                        student@example.com
+                    </p>
+
+                </div>
+
+
+
+                <div class="profile-information">
+
+
+                    <div>
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong id="profileInfoName">
+                            Student
+                        </strong>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <span>
+                            Email
+                        </span>
+
+                        <strong id="profileInfoEmail">
+                            student@example.com
+                        </strong>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <span>
+                            Course
+                        </span>
+
+                        <strong id="profileInfoCourse">
+                            AI & Data Science
+                        </strong>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <span>
+                            Year
+                        </span>
+
+                        <strong id="profileInfoYear">
+                            Final Year
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SETTINGS
+        ====================================== -->
+
+        <section
+            class="app-section"
+            id="settingsSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        ⚙️ Settings
+                    </h2>
+
+                    <p>
+                        Customize your Smart Student experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-card dashboard-card">
+
+
+                <div class="setting-row">
+
+                    <div>
+
+                        <strong>
+                            Dark Mode
+                        </strong>
+
+                        <span>
+                            Switch between light and dark mode.
+                        </span>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="darkModeToggle"
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+
+                <div class="setting-row">
+
+                    <div>
+
+                        <strong>
+                            Notifications
+                        </strong>
+
+                        <span>
+                            Receive academic reminders.
+                        </span>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="notificationToggle"
+                            checked
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+
+                <div class="setting-row">
+
+                    <div>
+
+                        <strong>
+                            Assignment Reminders
+                        </strong>
+
+                        <span>
+                            Get reminders before deadlines.
+                        </span>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            checked
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             NOTIFICATIONS
+        ====================================== -->
+
+        <section
+            class="app-section"
+            id="notificationsSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        🔔 Notifications
+                    </h2>
+
+                    <p>
+                        Stay updated with your academic activities.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-action"
+                    id="clearNotifications"
+                >
+                    Clear All
+                </button>
+
+            </div>
+
+
+            <div
+                class="notifications-list"
+                id="notificationsList"
+            >
+
+
+                <div class="notification-card unread">
+
+                    <div class="notification-icon">
+                        📝
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Assignment Due Tomorrow
+                        </strong>
+
+                        <p>
+                            Neural Network Assignment is due tomorrow.
+                        </p>
+
+                        <span>
+                            2 hours ago
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="notification-card">
+
+                    <div class="notification-icon">
+                        📊
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Attendance Reminder
+                        </strong>
+
+                        <p>
+                            Your Cloud Computing attendance is 79%.
+                        </p>
+
+                        <span>
+                            Yesterday
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="notification-card">
+
+                    <div class="notification-icon">
+                        🤖
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            AI Quiz Available
+                        </strong>
+
+                        <p>
+                            Test your knowledge with a new quiz.
+                        </p>
+
+                        <span>
+                            2 days ago
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            © 2026 Smart Student •
+            Learn smarter, achieve more. 🎓
+
+        </footer>
+
+    </main>
+
+
+
+    <!-- IMPORTANT:
+         Firebase app.js must be loaded as a module -->
+
+    <script
+        type="module"
+        src="app.js"
+    ></script>
+
+</body>
+
+</html>

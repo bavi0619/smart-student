@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Smart Student - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="auth-body">
+
+    <div class="auth-overlay"></div>
+
+
+    <div class="auth-container">
+
+
+        <!-- ======================================
+             LEFT WELCOME SECTION
+        ======================================= -->
+
+        <div class="welcome-section">
+
+
+            <div class="brand-logo">
+                🎓
+            </div>
+
+
+            <h1>
+                Smart <span>Student</span>
+            </h1>
+
+
+            <p class="tagline">
+                Your personal academic companion
+            </p>
+
+
+            <div class="features">
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Track Attendance
+                        </h3>
+
+                        <p>
+                            Never miss a class
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        📝
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Manage Assignments
+                        </h3>
+
+                        <p>
+                            Stay on top of deadlines
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🧠
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            AI Learning Tools
+                        </h3>
+
+                        <p>
+                            Quizzes, summaries & more
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        📈
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Improve Performance
+                        </h3>
+
+                        <p>
+                            Build a brighter future
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="dream-text">
+                Dream ✦ Learn ✦ Achieve
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ======================================
+             RIGHT AUTH SECTION
+        ======================================= -->
+
+        <div class="auth-section">
+
+
+            <!-- ==================================
+                 LOGIN CARD
+            =================================== -->
+
+            <div
+                class="auth-card"
+                id="loginCard"
+            >
+
+
+                <h2>
+                    Welcome Back 👋
+                </h2>
+
+
+                <p class="auth-subtitle">
+                    Login to continue your learning journey
+                </p>
+
+
+
+                <!-- LOGIN / SIGNUP TABS -->
+
+                <div class="auth-tabs">
+
+                    <button
+                        type="button"
+                        class="tab active"
+                    >
+                        Login
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="tab"
+                        id="showSignup"
+                    >
+                        Sign Up
+                    </button>
+
+                </div>
+
+
+
+                <!-- LOGIN FORM -->
+
+                <form id="loginForm">
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Email
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span>
+                                ✉️
+                            </span>
+
+
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Password
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span>
+                                🔒
+                            </span>
+
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="loginPasswordToggle"
+                            >
+                                👁
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="forgot-row">
+
+                        <a
+                            href="#"
+                            id="forgotPassword"
+                        >
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                        id="loginButton"
+                    >
+
+                        Login
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <div class="or-divider">
+
+                    <span></span>
+
+                    OR
+
+                    <span></span>
+
+                </div>
+
+
+
+                <p class="switch-text">
+
+                    Don't have an account?
+
+                    <a
+                        href="#"
+                        id="showSignupBottom"
+                    >
+                        Sign Up
+                    </a>
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- ==================================
+                 SIGNUP CARD
+            =================================== -->
+
+            <div
+                class="auth-card signup-card hidden"
+            >
+
+
+                <h2>
+                    Create Account ✨
+                </h2>
+
+
+                <p class="auth-subtitle">
+                    Start your smarter learning journey
+                </p>
+
+
+
+                <!-- LOGIN / SIGNUP TABS -->
+
+                <div class="auth-tabs">
+
+                    <button
+                        type="button"
+                        class="tab"
+                        id="showLoginTab"
+                    >
+                        Login
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="tab active"
+                    >
+                        Sign Up
+                    </button>
+
+                </div>
+
+
+
+                <!-- SIGNUP FORM -->
+
+                <form id="signupForm">
+
+
+                    <!-- NAME -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Full Name
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span>
+                                👤
+                            </span>
+
+
+                            <input
+                                type="text"
+                                id="signupName"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Email
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span>
+                                ✉️
+                            </span>
+
+
+                            <input
+                                type="email"
+                                id="signupEmail"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Password
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span>
+                                🔒
+                            </span>
+
+
+                            <input
+                                type="password"
+                                id="signupPassword"
+                                placeholder="Create a password"
+                                minlength="6"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="signupPasswordToggle"
+                            >
+                                👁
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- COURSE + YEAR -->
+
+                    <div class="input-row">
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Course
+                            </label>
+
+
+                            <select id="course">
+
+                                <option>
+                                    AI & Data Science
+                                </option>
+
+                                <option>
+                                    Computer Science
+                                </option>
+
+                                <option>
+                                    Information Technology
+                                </option>
+
+                                <option>
+                                    Electronics
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Year
+                            </label>
+
+
+                            <select id="year">
+
+                                <option>
+                                    1st Year
+                                </option>
+
+                                <option>
+                                    2nd Year
+                                </option>
+
+                                <option>
+                                    3rd Year
+                                </option>
+
+                                <option>
+                                    4th Year
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- SIGNUP BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                        id="signupButton"
+                    >
+
+                        Create Account
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <div class="or-divider">
+
+                    <span></span>
+
+                    OR
+
+                    <span></span>
+
+                </div>
+
+
+
+                <p class="switch-text">
+
+                    Already have an account?
+
+                    <a
+                        href="#"
+                        id="showLogin"
+                    >
+                        Login
+                    </a>
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ======================================
+         FIREBASE APP
+    ======================================= -->
+
+    <script
+        type="module"
+        src="app.js"
+    ></script>
+
+
+</body>
+
+</html>
